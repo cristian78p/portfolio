@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Cristian Rey</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E8380D'/><text x='50' y='72' font-size='62' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'>C</text></svg>">
+<style>
+:root{--ink:#131211;--red:#E8380D;--tint:#FFF0EA;--mute:#6B6560;--line:#E2DDD8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:grid;place-items:center;padding:24px;background:#fff;color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+main{width:100%;max-width:420px}
+h1{font-size:28px;letter-spacing:-.03em;line-height:1.1}
+h1 span{color:var(--red)}
+p{color:var(--mute);margin:8px 0 28px;font-size:15px}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px;margin-top:12px;
+  border-radius:14px;border:1.5px solid var(--ink);text-decoration:none;color:var(--ink);font-weight:600;font-size:17px}
+.btn small{display:block;font-weight:400;color:var(--mute);font-size:13px}
+.btn.main{background:var(--ink);color:#fff}
+.btn.main small{color:#bdb6af}
+.btn b{font-size:20px;color:var(--red)}
+a.site{display:inline-block;margin-top:26px;color:var(--mute);font-size:14px;border-bottom:1.5px solid var(--red)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Cristian Rey<span>.</span></h1>
+  <p id="sub">Desarrollador Full Stack · Medellín, Colombia</p>
+  <a id="es" class="btn" href="../Cristian_Rey_CV_ES.pdf" download>
+    <span>Hoja de vida en español<small>PDF · 2 páginas</small></span><b>↓</b></a>
+  <a id="en" class="btn" href="../Cristian_Rey_CV_EN.pdf" download>
+    <span>Résumé in English<small>PDF · 2 pages</small></span><b>↓</b></a>
+  <a class="site" href="../">cristian-rey.vercel.app</a>
+</main>
+<script>
+// pone primero (y resalta) el idioma del teléfono; el otro queda disponible debajo
+var es = document.getElementById('es'), en = document.getElementById('en');
+var isEs = (navigator.language || 'es').slice(0,2) === 'es';
+var first = isEs ? es : en, second = isEs ? en : es;
+first.classList.add('main');
+first.parentNode.insertBefore(first, second);
+if(!isEs){ document.documentElement.lang = 'en';
+  document.getElementById('sub').textContent = 'Full Stack Developer · Medellín, Colombia'; }
+</script>
+</body>
+</html>
